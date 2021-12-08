@@ -31,19 +31,17 @@ namespace CMPT_291_Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAndEmployee2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.EmployeeUI = new System.Windows.Forms.Button();
-            this.CustomerUI = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
             this.EmployeeControls = new System.Windows.Forms.TabControl();
             this.ManageUser = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.editDeleteMsg = new System.Windows.Forms.Label();
-            this.changeLast = new System.Windows.Forms.TextBox();
             this.doneEdit = new System.Windows.Forms.Button();
             this.deleteUser = new System.Windows.Forms.Button();
             this.editUser = new System.Windows.Forms.Button();
@@ -109,14 +107,15 @@ namespace CMPT_291_Project
             this.changeZip = new System.Windows.Forms.TextBox();
             this.changePhone = new System.Windows.Forms.TextBox();
             this.changeCred = new System.Windows.Forms.TextBox();
-            this.changeFirst = new System.Windows.Forms.TextBox();
             this.userNameEmp = new System.Windows.Forms.Label();
+            this.changeLast = new System.Windows.Forms.TextBox();
             this.userList = new System.Windows.Forms.DataGridView();
             this.AcctNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.planType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.changeFirst = new System.Windows.Forms.TextBox();
             this.ManageEmployees = new System.Windows.Forms.TabPage();
             this.editDeleteEmpMsg = new System.Windows.Forms.Label();
             this.changeEmpSur = new System.Windows.Forms.TextBox();
@@ -186,9 +185,6 @@ namespace CMPT_291_Project
             this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeListLabel = new System.Windows.Forms.Label();
             this.manageMovies = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RentalPage = new System.Windows.Forms.TabPage();
             this.MovieInfo = new System.Windows.Forms.Button();
             this.RentMovie = new System.Windows.Forms.ListView();
@@ -205,37 +201,7 @@ namespace CMPT_291_Project
             this.confirmRent = new System.Windows.Forms.Button();
             this.MoviesToWatch = new System.Windows.Forms.Label();
             this.UserPage = new System.Windows.Forms.TabPage();
-            this.userSettings = new System.Windows.Forms.Button();
-            this.watchListView = new System.Windows.Forms.ListView();
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.addToWatchlist = new System.Windows.Forms.Button();
-            this.remove = new System.Windows.Forms.Button();
-            this.watchList = new System.Windows.Forms.Label();
-            this.movieListView = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.backButton = new System.Windows.Forms.Button();
-            this.addMovies = new System.Windows.Forms.Button();
-            this.returnMovies = new System.Windows.Forms.Button();
-            this.customerName = new System.Windows.Forms.Label();
-            this.customerMovieList = new System.Windows.Forms.Label();
-            this.userSearchBar = new System.Windows.Forms.TextBox();
-            this.userActivity = new System.Windows.Forms.ProgressBar();
-            this.userPic = new System.Windows.Forms.PictureBox();
-            this.settings = new System.Windows.Forms.Button();
-            this.userSearchByName = new System.Windows.Forms.Button();
-            this.userSearchByAcct = new System.Windows.Forms.Button();
-            this.userTabUserList = new System.Windows.Forms.Label();
-            this.userListUsr = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.userID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.selectUser = new System.Windows.Forms.Button();
-            this.changeUserType = new System.Windows.Forms.Button();
             this.UserTabs = new System.Windows.Forms.TabControl();
-            this.UserType = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.EmployeeControls.SuspendLayout();
             this.ManageUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPicEmp)).BeginInit();
@@ -243,34 +209,9 @@ namespace CMPT_291_Project
             this.ManageEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeePic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employees)).BeginInit();
-            this.manageMovies.SuspendLayout();
             this.RentalPage.SuspendLayout();
-            this.UserPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userPic)).BeginInit();
             this.UserTabs.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // EmployeeUI
-            // 
-            this.EmployeeUI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmployeeUI.Location = new System.Drawing.Point(496, 286);
-            this.EmployeeUI.Name = "EmployeeUI";
-            this.EmployeeUI.Size = new System.Drawing.Size(88, 28);
-            this.EmployeeUI.TabIndex = 126;
-            this.EmployeeUI.Text = "Manager";
-            this.EmployeeUI.UseVisualStyleBackColor = true;
-            this.EmployeeUI.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // CustomerUI
-            // 
-            this.CustomerUI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerUI.Location = new System.Drawing.Point(402, 285);
-            this.CustomerUI.Name = "CustomerUI";
-            this.CustomerUI.Size = new System.Drawing.Size(88, 28);
-            this.CustomerUI.TabIndex = 127;
-            this.CustomerUI.Text = "Customer";
-            this.CustomerUI.UseVisualStyleBackColor = true;
-            this.CustomerUI.Click += new System.EventHandler(this.CustomerUI_Click);
             // 
             // EmployeeControls
             // 
@@ -283,13 +224,11 @@ namespace CMPT_291_Project
             this.EmployeeControls.Size = new System.Drawing.Size(993, 600);
             this.EmployeeControls.TabIndex = 128;
             this.EmployeeControls.Tag = "";
-            this.EmployeeControls.Visible = false;
             // 
             // ManageUser
             // 
             this.ManageUser.Controls.Add(this.button2);
             this.ManageUser.Controls.Add(this.editDeleteMsg);
-            this.ManageUser.Controls.Add(this.changeLast);
             this.ManageUser.Controls.Add(this.doneEdit);
             this.ManageUser.Controls.Add(this.deleteUser);
             this.ManageUser.Controls.Add(this.editUser);
@@ -355,6 +294,7 @@ namespace CMPT_291_Project
             this.ManageUser.Controls.Add(this.changeZip);
             this.ManageUser.Controls.Add(this.changePhone);
             this.ManageUser.Controls.Add(this.changeCred);
+            this.ManageUser.Controls.Add(this.changeLast);
             this.ManageUser.Controls.Add(this.changeFirst);
             this.ManageUser.Controls.Add(this.userNameEmp);
             this.ManageUser.Controls.Add(this.userList);
@@ -367,6 +307,17 @@ namespace CMPT_291_Project
             this.ManageUser.UseVisualStyleBackColor = true;
             this.ManageUser.Click += new System.EventHandler(this.ManageUser_Click);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button2.Location = new System.Drawing.Point(634, 476);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(151, 28);
+            this.button2.TabIndex = 286;
+            this.button2.Text = "Find Statistics";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // editDeleteMsg
             // 
             this.editDeleteMsg.AutoSize = true;
@@ -377,16 +328,6 @@ namespace CMPT_291_Project
             this.editDeleteMsg.TabIndex = 284;
             this.editDeleteMsg.Text = "Message";
             this.editDeleteMsg.Visible = false;
-            // 
-            // changeLast
-            // 
-            this.changeLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeLast.Location = new System.Drawing.Point(583, 48);
-            this.changeLast.Name = "changeLast";
-            this.changeLast.Size = new System.Drawing.Size(127, 38);
-            this.changeLast.TabIndex = 280;
-            this.changeLast.Text = "Surname";
-            this.changeLast.Visible = false;
             // 
             // doneEdit
             // 
@@ -1075,16 +1016,6 @@ namespace CMPT_291_Project
             this.changeCred.TabIndex = 277;
             this.changeCred.Visible = false;
             // 
-            // changeFirst
-            // 
-            this.changeFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeFirst.Location = new System.Drawing.Point(486, 48);
-            this.changeFirst.Name = "changeFirst";
-            this.changeFirst.Size = new System.Drawing.Size(91, 38);
-            this.changeFirst.TabIndex = 279;
-            this.changeFirst.Text = "Name";
-            this.changeFirst.Visible = false;
-            // 
             // userNameEmp
             // 
             this.userNameEmp.AutoSize = true;
@@ -1096,16 +1027,26 @@ namespace CMPT_291_Project
             this.userNameEmp.Visible = false;
             this.userNameEmp.Click += new System.EventHandler(this.userNameEmp_Click);
             // 
+            // changeLast
+            // 
+            this.changeLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeLast.Location = new System.Drawing.Point(583, 48);
+            this.changeLast.Name = "changeLast";
+            this.changeLast.Size = new System.Drawing.Size(127, 38);
+            this.changeLast.TabIndex = 280;
+            this.changeLast.Text = "Surname";
+            this.changeLast.Visible = false;
+            // 
             // userList
             // 
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.userList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.userList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
             this.userList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AcctNo,
@@ -1124,8 +1065,8 @@ namespace CMPT_291_Project
             // AcctNo
             // 
             this.AcctNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AcctNo.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AcctNo.DefaultCellStyle = dataGridViewCellStyle51;
             this.AcctNo.HeaderText = "ID";
             this.AcctNo.Name = "AcctNo";
             this.AcctNo.Width = 69;
@@ -1133,8 +1074,8 @@ namespace CMPT_291_Project
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle52;
             this.dataGridViewTextBoxColumn2.HeaderText = "Name";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 115;
@@ -1142,8 +1083,8 @@ namespace CMPT_291_Project
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle53;
             this.dataGridViewTextBoxColumn3.HeaderText = "Surname";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 155;
@@ -1151,18 +1092,28 @@ namespace CMPT_291_Project
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle54;
             this.dataGridViewTextBoxColumn4.HeaderText = "Phone No.";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 176;
             // 
             // planType
             // 
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.planType.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.planType.DefaultCellStyle = dataGridViewCellStyle55;
             this.planType.HeaderText = "Plan";
             this.planType.Name = "planType";
+            // 
+            // changeFirst
+            // 
+            this.changeFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeFirst.Location = new System.Drawing.Point(486, 48);
+            this.changeFirst.Name = "changeFirst";
+            this.changeFirst.Size = new System.Drawing.Size(91, 38);
+            this.changeFirst.TabIndex = 279;
+            this.changeFirst.Text = "Name";
+            this.changeFirst.Visible = false;
             // 
             // ManageEmployees
             // 
@@ -1227,8 +1178,8 @@ namespace CMPT_291_Project
             this.ManageEmployees.Controls.Add(this.EmpLastNameBox);
             this.ManageEmployees.Controls.Add(this.EmpLastName);
             this.ManageEmployees.Controls.Add(this.changeUserTypeEmp);
-            this.ManageEmployees.Controls.Add(this.employees);
             this.ManageEmployees.Controls.Add(this.employeeListLabel);
+            this.ManageEmployees.Controls.Add(this.employees);
             this.ManageEmployees.Location = new System.Drawing.Point(4, 40);
             this.ManageEmployees.Name = "ManageEmployees";
             this.ManageEmployees.Padding = new System.Windows.Forms.Padding(3);
@@ -1876,14 +1827,14 @@ namespace CMPT_291_Project
             // 
             // employees
             // 
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle56.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle56.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle56;
             this.employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SSN,
@@ -1932,7 +1883,6 @@ namespace CMPT_291_Project
             // 
             // manageMovies
             // 
-            this.manageMovies.Controls.Add(this.listView1);
             this.manageMovies.Location = new System.Drawing.Point(4, 40);
             this.manageMovies.Name = "manageMovies";
             this.manageMovies.Padding = new System.Windows.Forms.Padding(3);
@@ -1940,30 +1890,6 @@ namespace CMPT_291_Project
             this.manageMovies.TabIndex = 4;
             this.manageMovies.Text = "Manage Movies";
             this.manageMovies.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader11,
-            this.columnHeader12});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(267, 122);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(451, 311);
-            this.listView1.TabIndex = 233;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.Visible = false;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Movie Title";
-            this.columnHeader11.Width = 109;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "ID";
             // 
             // RentalPage
             // 
@@ -2111,27 +2037,6 @@ namespace CMPT_291_Project
             // 
             // UserPage
             // 
-            this.UserPage.Controls.Add(this.userSettings);
-            this.UserPage.Controls.Add(this.watchListView);
-            this.UserPage.Controls.Add(this.addToWatchlist);
-            this.UserPage.Controls.Add(this.remove);
-            this.UserPage.Controls.Add(this.watchList);
-            this.UserPage.Controls.Add(this.movieListView);
-            this.UserPage.Controls.Add(this.backButton);
-            this.UserPage.Controls.Add(this.addMovies);
-            this.UserPage.Controls.Add(this.returnMovies);
-            this.UserPage.Controls.Add(this.customerName);
-            this.UserPage.Controls.Add(this.customerMovieList);
-            this.UserPage.Controls.Add(this.userSearchBar);
-            this.UserPage.Controls.Add(this.userActivity);
-            this.UserPage.Controls.Add(this.userPic);
-            this.UserPage.Controls.Add(this.settings);
-            this.UserPage.Controls.Add(this.userSearchByName);
-            this.UserPage.Controls.Add(this.userSearchByAcct);
-            this.UserPage.Controls.Add(this.userTabUserList);
-            this.UserPage.Controls.Add(this.userListUsr);
-            this.UserPage.Controls.Add(this.selectUser);
-            this.UserPage.Controls.Add(this.changeUserType);
             this.UserPage.Location = new System.Drawing.Point(4, 40);
             this.UserPage.Name = "UserPage";
             this.UserPage.Padding = new System.Windows.Forms.Padding(3);
@@ -2139,278 +2044,6 @@ namespace CMPT_291_Project
             this.UserPage.TabIndex = 0;
             this.UserPage.Text = "User";
             this.UserPage.UseVisualStyleBackColor = true;
-            // 
-            // userSettings
-            // 
-            this.userSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userSettings.Location = new System.Drawing.Point(894, 207);
-            this.userSettings.Name = "userSettings";
-            this.userSettings.Size = new System.Drawing.Size(61, 27);
-            this.userSettings.TabIndex = 142;
-            this.userSettings.Text = "Settings";
-            this.userSettings.UseVisualStyleBackColor = true;
-            this.userSettings.Visible = false;
-            this.userSettings.Click += new System.EventHandler(this.userSettings_Click);
-            // 
-            // watchListView
-            // 
-            this.watchListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader9,
-            this.columnHeader10});
-            this.watchListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.watchListView.HideSelection = false;
-            this.watchListView.Location = new System.Drawing.Point(437, 156);
-            this.watchListView.Name = "watchListView";
-            this.watchListView.Size = new System.Drawing.Size(383, 236);
-            this.watchListView.TabIndex = 138;
-            this.watchListView.UseCompatibleStateImageBehavior = false;
-            this.watchListView.View = System.Windows.Forms.View.Details;
-            this.watchListView.Visible = false;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Movie Title";
-            this.columnHeader9.Width = 109;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "ID";
-            // 
-            // addToWatchlist
-            // 
-            this.addToWatchlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addToWatchlist.Location = new System.Drawing.Point(759, 398);
-            this.addToWatchlist.Name = "addToWatchlist";
-            this.addToWatchlist.Size = new System.Drawing.Size(61, 27);
-            this.addToWatchlist.TabIndex = 141;
-            this.addToWatchlist.Text = "Add";
-            this.addToWatchlist.UseVisualStyleBackColor = true;
-            this.addToWatchlist.Visible = false;
-            // 
-            // remove
-            // 
-            this.remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remove.Location = new System.Drawing.Point(692, 398);
-            this.remove.Name = "remove";
-            this.remove.Size = new System.Drawing.Size(61, 27);
-            this.remove.TabIndex = 140;
-            this.remove.Text = "Remove";
-            this.remove.UseVisualStyleBackColor = true;
-            this.remove.Visible = false;
-            // 
-            // watchList
-            // 
-            this.watchList.AutoSize = true;
-            this.watchList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.watchList.Location = new System.Drawing.Point(432, 129);
-            this.watchList.Name = "watchList";
-            this.watchList.Size = new System.Drawing.Size(147, 25);
-            this.watchList.TabIndex = 139;
-            this.watchList.Text = "My Watchlist";
-            this.watchList.Visible = false;
-            this.watchList.Click += new System.EventHandler(this.watchList_Click);
-            // 
-            // movieListView
-            // 
-            this.movieListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader8});
-            this.movieListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.movieListView.HideSelection = false;
-            this.movieListView.Location = new System.Drawing.Point(31, 156);
-            this.movieListView.Name = "movieListView";
-            this.movieListView.Size = new System.Drawing.Size(383, 236);
-            this.movieListView.TabIndex = 127;
-            this.movieListView.UseCompatibleStateImageBehavior = false;
-            this.movieListView.View = System.Windows.Forms.View.Details;
-            this.movieListView.Visible = false;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Movie Title";
-            this.columnHeader7.Width = 109;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "ID";
-            // 
-            // backButton
-            // 
-            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.Location = new System.Drawing.Point(894, 26);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(61, 27);
-            this.backButton.TabIndex = 135;
-            this.backButton.Text = "Log  Out";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Visible = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
-            // addMovies
-            // 
-            this.addMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addMovies.Location = new System.Drawing.Point(353, 398);
-            this.addMovies.Name = "addMovies";
-            this.addMovies.Size = new System.Drawing.Size(61, 27);
-            this.addMovies.TabIndex = 134;
-            this.addMovies.Text = "Add";
-            this.addMovies.UseVisualStyleBackColor = true;
-            this.addMovies.Visible = false;
-            this.addMovies.Click += new System.EventHandler(this.addMovies_Click);
-            // 
-            // returnMovies
-            // 
-            this.returnMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returnMovies.Location = new System.Drawing.Point(286, 398);
-            this.returnMovies.Name = "returnMovies";
-            this.returnMovies.Size = new System.Drawing.Size(61, 27);
-            this.returnMovies.TabIndex = 133;
-            this.returnMovies.Text = "Return";
-            this.returnMovies.UseVisualStyleBackColor = true;
-            this.returnMovies.Visible = false;
-            // 
-            // customerName
-            // 
-            this.customerName.AutoSize = true;
-            this.customerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerName.Location = new System.Drawing.Point(8, 60);
-            this.customerName.Name = "customerName";
-            this.customerName.Size = new System.Drawing.Size(158, 33);
-            this.customerName.TabIndex = 132;
-            this.customerName.Text = "Username";
-            this.customerName.Visible = false;
-            // 
-            // customerMovieList
-            // 
-            this.customerMovieList.AutoSize = true;
-            this.customerMovieList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerMovieList.Location = new System.Drawing.Point(26, 128);
-            this.customerMovieList.Name = "customerMovieList";
-            this.customerMovieList.Size = new System.Drawing.Size(125, 25);
-            this.customerMovieList.TabIndex = 131;
-            this.customerMovieList.Text = "My Movies";
-            this.customerMovieList.Visible = false;
-            // 
-            // userSearchBar
-            // 
-            this.userSearchBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userSearchBar.Location = new System.Drawing.Point(6, 486);
-            this.userSearchBar.Name = "userSearchBar";
-            this.userSearchBar.Size = new System.Drawing.Size(509, 26);
-            this.userSearchBar.TabIndex = 90;
-            // 
-            // userActivity
-            // 
-            this.userActivity.Location = new System.Drawing.Point(835, 186);
-            this.userActivity.Name = "userActivity";
-            this.userActivity.Size = new System.Drawing.Size(120, 15);
-            this.userActivity.TabIndex = 126;
-            this.userActivity.Value = 50;
-            this.userActivity.Visible = false;
-            // 
-            // userPic
-            // 
-            this.userPic.Image = ((System.Drawing.Image)(resources.GetObject("userPic.Image")));
-            this.userPic.Location = new System.Drawing.Point(835, 60);
-            this.userPic.Name = "userPic";
-            this.userPic.Size = new System.Drawing.Size(120, 120);
-            this.userPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.userPic.TabIndex = 125;
-            this.userPic.TabStop = false;
-            this.userPic.Visible = false;
-            // 
-            // settings
-            // 
-            this.settings.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.settings.Location = new System.Drawing.Point(894, 27);
-            this.settings.Name = "settings";
-            this.settings.Size = new System.Drawing.Size(61, 27);
-            this.settings.TabIndex = 99;
-            this.settings.Text = "Settings";
-            this.settings.UseVisualStyleBackColor = true;
-            this.settings.Visible = false;
-            // 
-            // userSearchByName
-            // 
-            this.userSearchByName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userSearchByName.Location = new System.Drawing.Point(6, 519);
-            this.userSearchByName.Name = "userSearchByName";
-            this.userSearchByName.Size = new System.Drawing.Size(156, 28);
-            this.userSearchByName.TabIndex = 89;
-            this.userSearchByName.Text = "Search by Name";
-            this.userSearchByName.UseVisualStyleBackColor = true;
-            // 
-            // userSearchByAcct
-            // 
-            this.userSearchByAcct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userSearchByAcct.Location = new System.Drawing.Point(168, 519);
-            this.userSearchByAcct.Name = "userSearchByAcct";
-            this.userSearchByAcct.Size = new System.Drawing.Size(176, 28);
-            this.userSearchByAcct.TabIndex = 91;
-            this.userSearchByAcct.Text = "Search by Acct. No.";
-            this.userSearchByAcct.UseVisualStyleBackColor = true;
-            // 
-            // userTabUserList
-            // 
-            this.userTabUserList.AutoSize = true;
-            this.userTabUserList.Location = new System.Drawing.Point(3, 27);
-            this.userTabUserList.Name = "userTabUserList";
-            this.userTabUserList.Size = new System.Drawing.Size(207, 31);
-            this.userTabUserList.TabIndex = 88;
-            this.userTabUserList.Text = "Who\'s renting?";
-            // 
-            // userListUsr
-            // 
-            this.userListUsr.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6,
-            this.userID});
-            this.userListUsr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userListUsr.HideSelection = false;
-            this.userListUsr.Location = new System.Drawing.Point(3, 60);
-            this.userListUsr.MultiSelect = false;
-            this.userListUsr.Name = "userListUsr";
-            this.userListUsr.Size = new System.Drawing.Size(600, 380);
-            this.userListUsr.TabIndex = 87;
-            this.userListUsr.UseCompatibleStateImageBehavior = false;
-            this.userListUsr.View = System.Windows.Forms.View.Details;
-            this.userListUsr.SelectedIndexChanged += new System.EventHandler(this.listView4_SelectedIndexChanged);
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "First Name";
-            this.columnHeader5.Width = 109;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Last Name";
-            this.columnHeader6.Width = 105;
-            // 
-            // userID
-            // 
-            this.userID.Text = "ID";
-            // 
-            // selectUser
-            // 
-            this.selectUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectUser.Location = new System.Drawing.Point(609, 413);
-            this.selectUser.Name = "selectUser";
-            this.selectUser.Size = new System.Drawing.Size(61, 27);
-            this.selectUser.TabIndex = 136;
-            this.selectUser.Text = "Select";
-            this.selectUser.UseVisualStyleBackColor = true;
-            this.selectUser.Click += new System.EventHandler(this.selectUser_Click);
-            // 
-            // changeUserType
-            // 
-            this.changeUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeUserType.Location = new System.Drawing.Point(848, 26);
-            this.changeUserType.Name = "changeUserType";
-            this.changeUserType.Size = new System.Drawing.Size(107, 27);
-            this.changeUserType.TabIndex = 137;
-            this.changeUserType.Text = "Change User Type";
-            this.changeUserType.UseVisualStyleBackColor = true;
-            this.changeUserType.Click += new System.EventHandler(this.changeUserType_Click);
             // 
             // UserTabs
             // 
@@ -2424,27 +2057,6 @@ namespace CMPT_291_Project
             this.UserTabs.Tag = "";
             this.UserTabs.Visible = false;
             // 
-            // UserType
-            // 
-            this.UserType.AutoSize = true;
-            this.UserType.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.UserType.Location = new System.Drawing.Point(396, 238);
-            this.UserType.Name = "UserType";
-            this.UserType.Size = new System.Drawing.Size(198, 31);
-            this.UserType.TabIndex = 186;
-            this.UserType.Text = "Type of User?";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(634, 476);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 28);
-            this.button2.TabIndex = 286;
-            this.button2.Text = "Find Statistics";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // UserAndEmployee2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 31F);
@@ -2452,9 +2064,6 @@ namespace CMPT_291_Project
             this.ClientSize = new System.Drawing.Size(986, 599);
             this.Controls.Add(this.EmployeeControls);
             this.Controls.Add(this.UserTabs);
-            this.Controls.Add(this.UserType);
-            this.Controls.Add(this.EmployeeUI);
-            this.Controls.Add(this.CustomerUI);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UserAndEmployee2";
@@ -2469,21 +2078,14 @@ namespace CMPT_291_Project
             this.ManageEmployees.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeePic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employees)).EndInit();
-            this.manageMovies.ResumeLayout(false);
             this.RentalPage.ResumeLayout(false);
             this.RentalPage.PerformLayout();
-            this.UserPage.ResumeLayout(false);
-            this.UserPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userPic)).EndInit();
             this.UserTabs.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button EmployeeUI;
-        private System.Windows.Forms.Button CustomerUI;
         private System.Windows.Forms.TabControl EmployeeControls;
         private System.Windows.Forms.TabPage ManageUser;
         private System.Windows.Forms.TextBox getCred;
@@ -2536,29 +2138,7 @@ namespace CMPT_291_Project
         private System.Windows.Forms.ColumnHeader Rating;
         private System.Windows.Forms.ColumnHeader Availability;
         private System.Windows.Forms.TabPage UserPage;
-        private System.Windows.Forms.Label userTabUserList;
-        private System.Windows.Forms.Button selectUser;
-        private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Button addMovies;
-        private System.Windows.Forms.Button returnMovies;
-        private System.Windows.Forms.Label customerName;
-        private System.Windows.Forms.Label customerMovieList;
-        private System.Windows.Forms.ListView movieListView;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.TextBox userSearchBar;
-        private System.Windows.Forms.ProgressBar userActivity;
-        private System.Windows.Forms.PictureBox userPic;
-        private System.Windows.Forms.Button settings;
-        private System.Windows.Forms.Button userSearchByName;
-        private System.Windows.Forms.Button userSearchByAcct;
-        private System.Windows.Forms.ListView userListUsr;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader userID;
         private System.Windows.Forms.TabControl UserTabs;
-        private System.Windows.Forms.Label UserType;
-        private System.Windows.Forms.Button changeUserType;
         private System.Windows.Forms.Button userTypeEmp;
         private System.Windows.Forms.Button confirmRent;
         private System.Windows.Forms.Label label1;
@@ -2567,13 +2147,6 @@ namespace CMPT_291_Project
         private System.Windows.Forms.Button searchTitle;
         private System.Windows.Forms.Button searchGenre;
         private System.Windows.Forms.Button MovieInfo;
-        private System.Windows.Forms.ListView watchListView;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.Button addToWatchlist;
-        private System.Windows.Forms.Button remove;
-        private System.Windows.Forms.Label watchList;
-        private System.Windows.Forms.Button userSettings;
         private System.Windows.Forms.TabPage ManageEmployees;
         private System.Windows.Forms.Label employeeListLabel;
         private System.Windows.Forms.Button changeUserTypeEmp;
@@ -2613,9 +2186,6 @@ namespace CMPT_291_Project
         private System.Windows.Forms.Button CancelAdd;
         private System.Windows.Forms.Button empBackButton;
         private System.Windows.Forms.TabPage manageMovies;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.TextBox value;
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.ComboBox dropDown;

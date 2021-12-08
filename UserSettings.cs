@@ -28,7 +28,7 @@ namespace CMPT_291_Project
 
             TI = new CultureInfo("en-US", false).TextInfo;
 
-            String connectionString = "Server = IANPC; Database = MovieRental; Trusted_Connection = yes;";
+            String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental; Trusted_Connection = yes;";
 
             conn = new SqlConnection(connectionString);
 
@@ -193,7 +193,7 @@ namespace CMPT_291_Project
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            UserAndEmployee2 main = new UserAndEmployee2();
+            customerUI main = new customerUI();
             main.Show();
         }
 

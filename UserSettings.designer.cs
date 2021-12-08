@@ -34,8 +34,8 @@ namespace CMPT_291_Project
             this.recentActivityControl = new System.Windows.Forms.TabControl();
             this.recentlyWatchedTab = new System.Windows.Forms.TabPage();
             this.recentlyWatchedListView = new System.Windows.Forms.ListView();
-            this.watchedDateViewedColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.watchedMovieColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.watchedDateViewedColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.watchedUserRatingHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.watchedAvgUserRatingHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.movieRatingsTab = new System.Windows.Forms.TabPage();
@@ -90,7 +90,7 @@ namespace CMPT_291_Project
             // 
             this.myActivityLabel.AutoSize = true;
             this.myActivityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myActivityLabel.Location = new System.Drawing.Point(54, 388);
+            this.myActivityLabel.Location = new System.Drawing.Point(438, 66);
             this.myActivityLabel.Name = "myActivityLabel";
             this.myActivityLabel.Size = new System.Drawing.Size(145, 31);
             this.myActivityLabel.TabIndex = 6;
@@ -102,7 +102,7 @@ namespace CMPT_291_Project
             this.recentActivityControl.Controls.Add(this.movieRatingsTab);
             this.recentActivityControl.Controls.Add(this.actorRatingsTab);
             this.recentActivityControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentActivityControl.Location = new System.Drawing.Point(60, 422);
+            this.recentActivityControl.Location = new System.Drawing.Point(444, 100);
             this.recentActivityControl.Name = "recentActivityControl";
             this.recentActivityControl.SelectedIndex = 0;
             this.recentActivityControl.Size = new System.Drawing.Size(506, 273);
@@ -136,15 +136,15 @@ namespace CMPT_291_Project
             this.recentlyWatchedListView.View = System.Windows.Forms.View.Details;
             this.recentlyWatchedListView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // watchedDateViewedColumn
-            // 
-            this.watchedDateViewedColumn.Text = "Viewed";
-            this.watchedDateViewedColumn.Width = 100;
-            // 
             // watchedMovieColumn
             // 
             this.watchedMovieColumn.Text = "Title";
             this.watchedMovieColumn.Width = 179;
+            // 
+            // watchedDateViewedColumn
+            // 
+            this.watchedDateViewedColumn.Text = "Viewed";
+            this.watchedDateViewedColumn.Width = 100;
             // 
             // watchedUserRatingHeader
             // 
