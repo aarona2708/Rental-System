@@ -21,10 +21,6 @@ namespace CMPT_291_Project
         {
             InitializeComponent();
 
-            userMoviesDropdown.Items.Add("My Queue");
-            userMoviesDropdown.Items.Add("My Watchlist");
-            userMoviesDropdown.Items.Add("My Suggestions");
-
             String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental; Trusted_Connection = yes;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
@@ -99,7 +95,7 @@ namespace CMPT_291_Project
             MovieLists.Visible = true;
             MovieLists.Visible = true;
             moviesSearch.Visible = true;
-            userMoviesDropdown.Visible = true;
+            //userMoviesDropdown.Visible = true;
 
            // changeUserType.Visible = false;
         }
@@ -112,26 +108,24 @@ namespace CMPT_291_Project
         private void moviesSearch_Click(object sender, EventArgs e)
         {
             myCommand.CommandText = "select * from movies";
-            if (userMoviesDropdown.Text == "My Queue")
+            try
             {
-                try
-                {
-                    //MessageBox.Show(myCommand.CommandText);
-                    myReader = myCommand.ExecuteReader();
+                //MessageBox.Show(myCommand.CommandText);
+                myReader = myCommand.ExecuteReader();
 
-                    MovieLists.Rows.Clear();
-                    while (myReader.Read())
-                    {
-                        MovieLists.Rows.Add(myReader["id"].ToString(), myReader["title"].ToString(), myReader["genre"].ToString(), myReader["copies_in_stock"].ToString());
-                    }
-
-                    myReader.Close();
-                }
-                catch
+                MovieLists.Rows.Clear();
+                while (myReader.Read())
                 {
-                    //MessageBox.Show(e3.ToString(), "Error");
+                    MovieLists.Rows.Add(myReader["id"].ToString(), myReader["title"].ToString(), myReader["genre"].ToString(), myReader["copies_in_stock"].ToString());
                 }
+
+                myReader.Close();
             }
+            catch
+            {
+                //MessageBox.Show(e3.ToString(), "Error");
+            }
+            
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -145,6 +139,13 @@ namespace CMPT_291_Project
         {
             this.Hide();
             UserSettings settingsWindow = new UserSettings(Int32.Parse(custAcctNo.Text));
+            settingsWindow.Show();
+        }
+
+        private void moviePageButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Movies settingsWindow = new Movies(Int32.Parse(custAcctNo.Text));
             settingsWindow.Show();
         }
     }

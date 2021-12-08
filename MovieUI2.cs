@@ -82,6 +82,11 @@ namespace CMPT_291_Project
             UserAndEmployee2 main = new UserAndEmployee2();
             main.Show();
         }
+
+        private void MovieUI2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
