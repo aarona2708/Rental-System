@@ -1,0 +1,15 @@
+With the Movie Rental created users are able to effectively search through the various movies that we provide by name, by genre. The rental system will begin by questioning 
+if the user is an employee or a customer, to only allow certain users to be authorized for using their respective interfaces. If the user is a customer it will then allow the user to create their profile and/or access their profile. If the User would
+like too, they can also search for their profile by name or account number. Once their profile is selected they will be able to see and manage the movies in their watchlist
+as well as be able to see their previous purchase and rental history. If the user would like to search for a movie, they can hit the add button at the bottom of their watch list.
+From there they are given the option to display all the movies offered, or search for a specific movie by name, genre or actor. If the movie does exist, they will be allowed to
+select it and display movie info - such as rating, fee, genre, title. From there they can rent the movie. On the users profile they are also able to leave a rating for the movie 
+they watch. They will be able to see personalised suggested movies for them based on the most watched genre. If the user decides to rent a selected movie they'll be able to see 
+the availability of the movie. 
+
+If the user is a manager, they will be able to manage the movies accessible to the customers, giving them the ability to add and delete movies. With that they are also able to
+manage the users and common employees. Allowing them to add/terminate employees and users as desired. The manager is also able to obtain a detailed sales report in which they are able to see
+active subscriptions in a specific month. Employees are also able to produce a list of most active customers and movies allowing the sales report to be accurate. On the 
+employees section is where the personalised movies for the user are created. 
+
+Overall the Movie Rental System has a very easy layout allowing other users and employees to be as efficient and productive as possible when using.
