@@ -16,10 +16,12 @@ namespace CMPT_291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        int accountNumber;
 
         public userProfile(int acctNo)
         {
             InitializeComponent();
+            this.accountNumber = acctNo;
 
             String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental; Trusted_Connection = yes;";
 
@@ -107,7 +109,7 @@ namespace CMPT_291_Project
 
         private void moviesSearch_Click(object sender, EventArgs e)
         {
-            myCommand.CommandText = "select * from movies";
+            myCommand.CommandText = "select id, title, genre, copies_in_stock from movies, customers, customers_watchlist where customer_watchlist.id = customers.account_number and customer_watchlist.movie_id = movies.id";
             try
             {
                 //MessageBox.Show(myCommand.CommandText);
@@ -145,7 +147,7 @@ namespace CMPT_291_Project
         private void moviePageButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Movies settingsWindow = new Movies(Int32.Parse(custAcctNo.Text));
+            Rental settingsWindow = new Rental(this.accountNumber);
             settingsWindow.Show();
         }
     }

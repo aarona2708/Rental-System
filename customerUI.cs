@@ -19,7 +19,7 @@ namespace CMPT_291_Project
         public customerUI()
         {
             InitializeComponent();
-            String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental; Trusted_Connection = yes;";
+            String connectionString = "Server = DESKTOP-1JJOH8H; Database = MovieRental; Trusted_Connection = yes;";
 
             customerDropdown.Items.Add("Show All");
 
@@ -162,7 +162,7 @@ namespace CMPT_291_Project
 
         private void userTabUserList_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void custSearchButton_Click_1(object sender, EventArgs e)
