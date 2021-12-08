@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Globalization;
 
 // test commit 
 
@@ -19,6 +20,7 @@ namespace CMPT_291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public TextInfo TI;
 
         public UserAndEmployee2()
         {
@@ -88,7 +90,7 @@ namespace CMPT_291_Project
             user4Emp.SubItems.Add("Fauht");
             user4Emp.SubItems.Add("114");
 
-
+            LoadMovieData();
             /*
             foreach (User usr in userArray)
             {
@@ -1300,7 +1302,125 @@ namespace CMPT_291_Project
             stats.Show();
         }
 
-        
+        private void addMovieBtn_Click(object sender, EventArgs e)
+        {
+            MoviePopup addMoviePopup = new MoviePopup();
+            DialogResult result = addMoviePopup.ShowDialog();
+
+            myCommand.CommandText = "INSERT INTO movies(title, genre, copies_in_stock) VALUES(@title, @genre, @copies)";
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    myCommand.Parameters.Add(new SqlParameter("@title", TI.ToTitleCase(addMoviePopup.GetMovieTitle())));
+                    myCommand.Parameters.Add(new SqlParameter("@genre", addMoviePopup.GetMovieGenre()));
+                    myCommand.Parameters.Add(new SqlParameter("@copies", addMoviePopup.GetMovieCopies()));
+                    myCommand.ExecuteNonQuery();
+                    myCommand.Parameters.Clear();
+
+                    LoadMovieData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "ERROR");
+                }
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                addMoviePopup.Dispose();
+            }
+        }
+
+        private void deleteMovieButton_Click(object sender, EventArgs e)
+        {
+
+            myCommand.CommandText = "DELETE FROM movies WHERE id = @id";
+
+            try
+            {
+                ListViewItem item = moviesListView.SelectedItems[0];
+                int itemId = Int32.Parse(item.SubItems[0].Text);
+                string title = item.SubItems[1].Text;
+                SqlParameter id = new SqlParameter("@id", itemId);
+                myCommand.Parameters.Add(id);
+                myCommand.ExecuteNonQuery();
+                myCommand.Parameters.Clear();
+
+                LoadMovieData();
+                MessageBox.Show("Deleted movie with ID " + itemId + " (" + title + ") from the database.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ERROR");
+            }
+        }
+
+        private void editMovieButton_Click(object sender, EventArgs e)
+        {
+            myCommand.CommandText = "UPDATE movies SET title = @title, genre = @genre, copies_in_stock = @copies WHERE id = @id";
+
+            try
+            {
+                // listview row data
+                ListViewItem item = moviesListView.SelectedItems[0];
+                int itemId = Int32.Parse(item.SubItems[0].Text);
+                string genre = item.SubItems[2].Text;
+                string title = item.SubItems[1].Text;
+                int copies = Int32.Parse(item.SubItems[3].Text);
+
+                // prepopulate movie popup with values pulled from db
+                MoviePopup editMoviePopup = new MoviePopup();
+                editMoviePopup.SetMovieTitle(title);
+                editMoviePopup.SetMovieGenre(genre);
+                editMoviePopup.SetMovieCopies(copies);
+
+                DialogResult result = editMoviePopup.ShowDialog();
+                editMoviePopup.Text = "Edit a Movie";
+
+                if (result == DialogResult.OK)
+                {
+                    myCommand.Parameters.Add(new SqlParameter("@title", TI.ToTitleCase(editMoviePopup.GetMovieTitle())));
+                    myCommand.Parameters.Add(new SqlParameter("@genre", editMoviePopup.GetMovieGenre()));
+                    myCommand.Parameters.Add(new SqlParameter("@copies", editMoviePopup.GetMovieCopies()));
+                    myCommand.Parameters.Add(new SqlParameter("@id", itemId));
+                    myCommand.ExecuteNonQuery();
+                    myCommand.Parameters.Clear();
+
+                    LoadMovieData();
+                    MessageBox.Show("Updated movie with ID " + itemId + " (" + title + ").");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ERROR");
+            }
+        }
+
+        public void LoadMovieData()
+        {
+            myCommand.CommandText = "SELECT * FROM movies";
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+                moviesListView.Items.Clear();
+
+                while (myReader.Read())
+                {
+                    ListViewItem item = new ListViewItem(myReader["id"].ToString());
+                    item.SubItems.Add(myReader["title"].ToString());
+                    item.SubItems.Add(myReader["genre"].ToString());
+                    item.SubItems.Add(myReader["copies_in_stock"].ToString());
+
+                    moviesListView.Items.Add(item);
+                }
+
+                myReader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ERROR");
+            }
+        }
     }
 
 }
