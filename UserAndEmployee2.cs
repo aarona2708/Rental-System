@@ -31,17 +31,7 @@ namespace CMPT_291_Project
             userDropdown.Items.Add("Show All");
             userDropdown.Items.Add("Show users with");
 
-
-            String connectionString = "Server = DESKTOP-1JJOH8H; Database = MovieRental; Trusted_Connection = yes;";
-
-
-            /* Starting the connection */
-            /*  SqlConnection myConnection = new SqlConnection("user id=temp2;" + // Username
-                                         "password=adminadmin;" + // Password
-                                         "server=localhost;" + // IP for the server
-                                                               //"Trusted_Connection=yes;" +
-                                         "database=ConnectTutorial; " + // Database to connect to
-                                         "connection timeout=30"); // Timeout in seconds */
+            String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental; Trusted_Connection = yes;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
@@ -79,10 +69,10 @@ namespace CMPT_291_Project
             user4.SubItems.Add("Fauht");
             user4.SubItems.Add("114");
 
-            userListUsr.Items.Add(user1);
-            userListUsr.Items.Add(user2);
-            userListUsr.Items.Add(user3);
-            userListUsr.Items.Add(user4);
+            //userListUsr.Items.Add(user1);
+            //userListUsr.Items.Add(user2);
+            //userListUsr.Items.Add(user3);
+            //userListUsr.Items.Add(user4);
 
             // EMPLOYEE TAB INTERFACE USERNAME'S LISTVIEW. TEST USERS FOR DEMO (NO DB CONNECTION)
             ListViewItem user1Emp = new ListViewItem("Aaron", 0);
@@ -219,38 +209,12 @@ namespace CMPT_291_Project
             // SHOW LABEL WITH "FULL QUEUE WARNING"
             // ELSE, GO TO MOVIE SCREEN
         }
-
-        private void backButton_Click(object sender, EventArgs e)
-        {
-            userTabUserList.Visible = true;
-            userListUsr.Visible = true;
-            userSearchBar.Visible = true;
-            userSearchByName.Visible = true;
-            userSearchByAcct.Visible = true;
-            selectUser.Visible = true;
-            changeUserType.Visible = true;
-
-            userSettings.Visible = false;
-            watchList.Visible = false;
-            remove.Visible = false;
-            addToWatchlist.Visible = false;
-            watchListView.Visible = false;
-            backButton.Visible = false;
-            customerName.Visible = false;
-            customerMovieList.Visible = false;
-            movieListView.Visible = false;
-            settings.Visible = false;
-            userPic.Visible = false;
-            userActivity.Visible = false;
-            addMovies.Visible = false;
-            returnMovies.Visible = false;
-
-
-        }
-
+        
+       
+        
         private void selectUser_Click(object sender, EventArgs e)
         {
-
+        /*
             if (userListUsr.SelectedItems.Count != 0)
             {
 
@@ -282,15 +246,14 @@ namespace CMPT_291_Project
                 backButton.Visible = true;
             }
             else { return; }
-
+        */
         }
-
-
+        
         private void RentalPage_Click(object sender, EventArgs e)
         {
 
         }
-
+        /*
         private void button1_Click(object sender, EventArgs e)
         {
             EmployeeControls.Visible = true;
@@ -301,7 +264,7 @@ namespace CMPT_291_Project
             UserType.Visible = false;
 
         }
-
+        
         private void CustomerUI_Click(object sender, EventArgs e)
         {
             UserTabs.Visible = true;
@@ -324,16 +287,20 @@ namespace CMPT_291_Project
             CustomerUI.Visible = true;
 
 
-        }
+        }*/
 
         private void userTypeEmp_Click(object sender, EventArgs e)
         {
-            changeUserType.Visible = false;
-            EmployeeControls.Visible = false;
+            
+            this.Hide();
+            MainScreen homeWindow = new MainScreen();
+            homeWindow.Show();
 
+            /*EmployeeControls.Visible = false;
+            changeUserType.Visible = false;
             UserType.Visible = true;
             EmployeeUI.Visible = true;
-            CustomerUI.Visible = true;
+            CustomerUI.Visible = true;*/
         }
 
         private void watchList_Click(object sender, EventArgs e)
@@ -350,14 +317,14 @@ namespace CMPT_291_Project
 
             addUserEmp1.Visible = true;
             userDropdown.Visible = true;
-            userSearchBar.Visible = true;
+            //userSearchBar.Visible = true;
             userSearchBox.Visible = true;
             userList.Visible = true;
 
             doneEdit.Visible = false;
             editUser.Visible = false;
             deleteUser.Visible = false;
-            userSearchBar.Visible = false;
+            //userSearchBar.Visible = false;
             userNameEmp.Visible = false;
             userAcctNo.Visible = false;
             userPlan.Visible = false;
@@ -578,7 +545,7 @@ namespace CMPT_291_Project
 
                     myReader.Close();
                 }
-                catch (Exception e3)
+                catch 
                 {
                     //MessageBox.Show(e3.ToString(), "Error");
                 }
@@ -596,16 +563,7 @@ namespace CMPT_291_Project
         {
 
         }
-
-        // OPENING OTHER FORMS
-
-        private void userSettings_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            UserSettings settingsWindow = new UserSettings(2401);
-            settingsWindow.Show();
-        }
-
+        
         private void searchTitle_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -732,7 +690,7 @@ namespace CMPT_291_Project
 
                     myReader.Close();
                 }
-                catch (Exception e3)
+                catch 
                 {
                     //MessageBox.Show(e3.ToString(), "Error");
                 }
@@ -787,7 +745,7 @@ namespace CMPT_291_Project
             userTypeEmp.Visible = false;
             userList.Visible = false;
             userDropdown.Visible = false;
-            userSearchBar.Visible = false;
+            //userSearchBar.Visible = false;
             userSearchBox.Visible = false;
             searchBar.Visible = false;
 
@@ -1341,35 +1299,8 @@ namespace CMPT_291_Project
             AdvancedStatistics stats = new AdvancedStatistics();
             stats.Show();
         }
-        /*
-private void selsectEmployee_Click(object sender, EventArgs e)
-{
 
-myCommand.CommandText = "select * from student";
-/*
-if (employeeSearchBar.Text == "Show with starting grade: ")
-myCommand.CommandText += " where grade >= " + SmallestGrade.Text;
-
-
-try
-{
-MessageBox.Show(myCommand.CommandText);
-myReader = myCommand.ExecuteReader();
-
-EmployeeList.Rows.Clear();
-while (myReader.Read())
-{
-EmployeeList.Rows.Add(myReader["ssn"].ToString(), myReader["first_name"].ToString(), myReader["last_name"].ToString(), myReader["phone_no"].ToString(), myReader["hourly_rate"].ToString());
-}
-
-myReader.Close();
-}
-catch (Exception e3)
-{
-MessageBox.Show(e3.ToString(), "Error");
-}
-
-}*/
+        
     }
 
 }

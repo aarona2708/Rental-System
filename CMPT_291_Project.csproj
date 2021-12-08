@@ -52,6 +52,18 @@
     <Compile Include="ActorSearch.Designer.cs">
       <DependentUpon>ActorSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="customerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerUI.Designer.cs">
+      <DependentUpon>customerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="MoviePopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,12 @@
     <Compile Include="UserAndEmployee2.designer.cs">
       <DependentUpon>UserAndEmployee2.cs</DependentUpon>
     </Compile>
+    <Compile Include="userProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userProfile.Designer.cs">
+      <DependentUpon>userProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +116,12 @@
     </Compile>
     <EmbeddedResource Include="ActorSearch.resx">
       <DependentUpon>ActorSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerUI.resx">
+      <DependentUpon>customerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MoviePopup.resx">
       <DependentUpon>MoviePopup.cs</DependentUpon>
@@ -125,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="UserAndEmployee2.resx">
       <DependentUpon>UserAndEmployee2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userProfile.resx">
+      <DependentUpon>userProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSettings.resx">
       <DependentUpon>UserSettings.cs</DependentUpon>
