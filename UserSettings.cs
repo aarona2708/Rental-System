@@ -106,70 +106,14 @@ namespace CMPT_291_Project
         {
             if
                 // field was left empty
-                (
-                    String.IsNullOrEmpty(firstNameTextBox.Text)
-                    || String.IsNullOrEmpty(lastNameTextBox.Text)
-                    || String.IsNullOrEmpty(paymentCardTextBox.Text)
-                    || planSelectDropdown.SelectedIndex == -1
-                    || String.IsNullOrEmpty(addressTextBox.Text)
-                    || String.IsNullOrEmpty(cityTextBox.Text)
-                    || String.IsNullOrEmpty(stateTextBox.Text)
-                    || String.IsNullOrEmpty(zipTextBox.Text)
-                    || String.IsNullOrEmpty(phoneNumberTextBox.Text)
-                )
+                (FieldWasEmpty())
             {
                 updateStatusLabel.Text = "There was an error saving your payment information.";
                 updateStatusLabel.BackColor = Color.Red;
 
             } else
             {
-                cmd.CommandText = "UPDATE customers SET "
-                           + "first_name = @first"
-                           + ", last_name = @last"
-                           + ", credit_card_no = @credit"
-                           + ", account_type = @plan"
-                           + ", address = @address"
-                           + ", city = @city"
-                           + ", state = @state"
-                           + ", zip_code = @zip"
-                           + ", phone_no = @phone"
-                           + " WHERE account_number = @id"; // TODO: Add in functionality for pulling user id from users page
-                try
-                {
-                    // add parameters to update statement
-                    cmd.Parameters.Add(new SqlParameter("@first", TI.ToTitleCase(firstNameTextBox.Text)));
-                    cmd.Parameters.Add(new SqlParameter("@last", TI.ToTitleCase(lastNameTextBox.Text)));
-                    cmd.Parameters.Add(new SqlParameter("@credit", paymentCardTextBox.Text));
-                    cmd.Parameters.Add(new SqlParameter("@plan", (planSelectDropdown.SelectedIndex + 1)));
-                    cmd.Parameters.Add(new SqlParameter("@address", TI.ToTitleCase(addressTextBox.Text)));
-                    cmd.Parameters.Add(new SqlParameter("@city", TI.ToTitleCase(cityTextBox.Text)));
-                    cmd.Parameters.Add(new SqlParameter("@state", TI.ToUpper(stateTextBox.Text)));
-                    cmd.Parameters.Add(new SqlParameter("@zip", TI.ToUpper(zipTextBox.Text)));
-                    cmd.Parameters.Add(new SqlParameter("@phone", phoneNumberTextBox.Text));
-                    cmd.Parameters.Add(new SqlParameter("@id", CUSTOMER_ACCOUNT_NUMBER));
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-
-                    // restore fields to empty default values
-                    firstNameTextBox.Text = "";
-                    lastNameTextBox.Text = "";
-                    paymentCardTextBox.Text = "";
-                    planSelectDropdown.SelectedIndex = -1;
-                    addressTextBox.Text = "";
-                    cityTextBox.Text = "";
-                    stateTextBox.Text = "";
-                    zipTextBox.Text = "";
-                    phoneNumberTextBox.Text = "";
-
-                    updateStatusLabel.Text = "Payment information saved!";
-                    updateStatusLabel.BackColor = Color.LightGreen;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString(), "ERROR");
-                    updateStatusLabel.Text = "There was an error saving your payment information.";
-                    updateStatusLabel.BackColor = Color.Red;
-                }
+                UpdatePaymentInfo();
             }
             
 
@@ -200,6 +144,70 @@ namespace CMPT_291_Project
         private void myRatingsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private Boolean FieldWasEmpty()
+        {
+            return String.IsNullOrEmpty(firstNameTextBox.Text)
+                    || String.IsNullOrEmpty(lastNameTextBox.Text)
+                    || String.IsNullOrEmpty(paymentCardTextBox.Text)
+                    || planSelectDropdown.SelectedIndex == -1
+                    || String.IsNullOrEmpty(addressTextBox.Text)
+                    || String.IsNullOrEmpty(cityTextBox.Text)
+                    || String.IsNullOrEmpty(stateTextBox.Text)
+                    || String.IsNullOrEmpty(zipTextBox.Text)
+                    || String.IsNullOrEmpty(phoneNumberTextBox.Text);
+        }
+
+        private void UpdatePaymentInfo()
+        {
+            cmd.CommandText = "UPDATE customers SET "
+                           + "first_name = @first"
+                           + ", last_name = @last"
+                           + ", credit_card_no = @credit"
+                           + ", account_type = @plan"
+                           + ", address = @address"
+                           + ", city = @city"
+                           + ", state = @state"
+                           + ", zip_code = @zip"
+                           + ", phone_no = @phone"
+                           + " WHERE account_number = @id"; // TODO: Add in functionality for pulling user id from users page
+            try
+            {
+                // add parameters to update statement
+                cmd.Parameters.Add(new SqlParameter("@first", TI.ToTitleCase(firstNameTextBox.Text)));
+                cmd.Parameters.Add(new SqlParameter("@last", TI.ToTitleCase(lastNameTextBox.Text)));
+                cmd.Parameters.Add(new SqlParameter("@credit", paymentCardTextBox.Text));
+                cmd.Parameters.Add(new SqlParameter("@plan", (planSelectDropdown.SelectedIndex + 1)));
+                cmd.Parameters.Add(new SqlParameter("@address", TI.ToTitleCase(addressTextBox.Text)));
+                cmd.Parameters.Add(new SqlParameter("@city", TI.ToTitleCase(cityTextBox.Text)));
+                cmd.Parameters.Add(new SqlParameter("@state", TI.ToUpper(stateTextBox.Text)));
+                cmd.Parameters.Add(new SqlParameter("@zip", TI.ToUpper(zipTextBox.Text)));
+                cmd.Parameters.Add(new SqlParameter("@phone", phoneNumberTextBox.Text));
+                cmd.Parameters.Add(new SqlParameter("@id", CUSTOMER_ACCOUNT_NUMBER));
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+
+                // restore fields to empty default values
+                firstNameTextBox.Text = "";
+                lastNameTextBox.Text = "";
+                paymentCardTextBox.Text = "";
+                planSelectDropdown.SelectedIndex = -1;
+                addressTextBox.Text = "";
+                cityTextBox.Text = "";
+                stateTextBox.Text = "";
+                zipTextBox.Text = "";
+                phoneNumberTextBox.Text = "";
+
+                updateStatusLabel.Text = "Payment information saved!";
+                updateStatusLabel.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ERROR");
+                updateStatusLabel.Text = "There was an error saving your payment information.";
+                updateStatusLabel.BackColor = Color.Red;
+            }
         }
 
         private void LoadRecentlyWatched()

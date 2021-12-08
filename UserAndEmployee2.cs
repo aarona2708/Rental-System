@@ -602,7 +602,7 @@ namespace CMPT_291_Project
         private void userSettings_Click(object sender, EventArgs e)
         {
             this.Hide();
-            UserSettings2 settingsWindow = new UserSettings2();
+            UserSettings settingsWindow = new UserSettings(2401);
             settingsWindow.Show();
         }
 
