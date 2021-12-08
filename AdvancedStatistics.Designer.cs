@@ -43,18 +43,18 @@ namespace CMPT_291_Project
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(26, 23);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 31);
+            this.label1.Size = new System.Drawing.Size(367, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Advanced Statistics";
+            this.label1.Text = "📊 Advanced Statistics";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(32, 102);
+            this.label2.Location = new System.Drawing.Point(34, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 20);
             this.label2.TabIndex = 1;
@@ -67,15 +67,16 @@ namespace CMPT_291_Project
             "Users who rent more than average",
             "Users who have not rented <genre>",
             "Users who have rented all genres",
-            "Movies that are rented more than average"});
-            this.queryBox.Location = new System.Drawing.Point(32, 125);
+            "Movies that are rented more than average",
+            "Users who rent <genre> more than average"});
+            this.queryBox.Location = new System.Drawing.Point(34, 117);
             this.queryBox.Name = "queryBox";
             this.queryBox.Size = new System.Drawing.Size(259, 21);
             this.queryBox.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(308, 125);
+            this.button1.Location = new System.Drawing.Point(310, 117);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(79, 21);
             this.button1.TabIndex = 4;
@@ -95,10 +96,11 @@ namespace CMPT_291_Project
             // 
             // displayListView
             // 
+            this.displayListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayListView.HideSelection = false;
-            this.displayListView.Location = new System.Drawing.Point(32, 181);
+            this.displayListView.Location = new System.Drawing.Point(32, 171);
             this.displayListView.Name = "displayListView";
-            this.displayListView.Size = new System.Drawing.Size(733, 257);
+            this.displayListView.Size = new System.Drawing.Size(733, 267);
             this.displayListView.TabIndex = 6;
             this.displayListView.UseCompatibleStateImageBehavior = false;
             this.displayListView.View = System.Windows.Forms.View.Details;
@@ -112,7 +114,7 @@ namespace CMPT_291_Project
             "Comedy",
             "Drama",
             "Foreign"});
-            this.selectGenreComboBox.Location = new System.Drawing.Point(92, 152);
+            this.selectGenreComboBox.Location = new System.Drawing.Point(94, 144);
             this.selectGenreComboBox.Name = "selectGenreComboBox";
             this.selectGenreComboBox.Size = new System.Drawing.Size(199, 21);
             this.selectGenreComboBox.TabIndex = 7;
@@ -122,7 +124,7 @@ namespace CMPT_291_Project
             // 
             this.selectGenreLabel.AutoSize = true;
             this.selectGenreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectGenreLabel.Location = new System.Drawing.Point(28, 153);
+            this.selectGenreLabel.Location = new System.Drawing.Point(30, 145);
             this.selectGenreLabel.Name = "selectGenreLabel";
             this.selectGenreLabel.Size = new System.Drawing.Size(58, 20);
             this.selectGenreLabel.TabIndex = 8;
@@ -133,7 +135,7 @@ namespace CMPT_291_Project
             // 
             this.resultsLabel.AutoSize = true;
             this.resultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultsLabel.Location = new System.Drawing.Point(304, 153);
+            this.resultsLabel.Location = new System.Drawing.Point(306, 145);
             this.resultsLabel.Name = "resultsLabel";
             this.resultsLabel.Size = new System.Drawing.Size(0, 20);
             this.resultsLabel.TabIndex = 9;

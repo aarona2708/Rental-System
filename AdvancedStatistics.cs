@@ -51,7 +51,7 @@ namespace CMPT_291_Project
         {
             int queryOption = queryBox.SelectedIndex;
 
-            if (queryOption == 1)
+            if (queryOption == 1 || queryOption == 4)
             {
                 selectGenreComboBox.Show();
                 selectGenreLabel.Show();
@@ -88,6 +88,11 @@ namespace CMPT_291_Project
                     break;
 
                 case 4:
+                    if (selectGenreComboBox.SelectedIndex != -1)
+                    {
+                        displayListView.Clear();
+                        ShowUsersWhoRentGenreMoreThanAverage(selectGenreComboBox.SelectedItem.ToString());
+                    }
                     break;
 
             }
@@ -261,6 +266,46 @@ namespace CMPT_291_Project
             }
         }
 
+        private void ShowUsersWhoRentGenreMoreThanAverage(string genre)
+        {
+            myCommand.CommandText =
+                "SELECT account_number, first_name, last_name, COUNT(genre) rented " +
+                "FROM customers c JOIN orders o ON c.account_number = o.customer_id JOIN movies m ON o.movie_id = m.id " +
+                "WHERE genre = '" + genre + "' " +
+                "GROUP BY account_number, first_name, last_name " +
+                "HAVING COUNT(genre) > ( " +
+                    "SELECT AVG(genre_rented.times_rented) " +
+                    "FROM( " +
+                        "SELECT COUNT(genre) times_rented " +
+                        "FROM customers c JOIN orders o ON c.account_number = o.customer_id JOIN movies m ON o.movie_id = m.id " +
+                        "WHERE genre = '" + genre + "' " +
+                        "GROUP BY account_number " +
+                    ") genre_rented " +
+                ")";
+
+            try
+            {
+                ReformatColumns(new List<string> { "Accout Number", "First Name", "Last Name", "Times Genre Rented" });
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    ListViewItem item = new ListViewItem(myReader["account_number"].ToString());
+                    item.SubItems.Add(myReader["first_name"].ToString());
+                    item.SubItems.Add(myReader["last_name"].ToString());
+                    item.SubItems.Add(myReader["rented"].ToString());
+
+                    displayListView.Items.Add(item);
+                }
+
+                myReader.Close();
+                ShowResults();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ERROR");
+            }
+        }
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
            
@@ -274,6 +319,8 @@ namespace CMPT_291_Project
             {
                 displayListView.Columns.Add(header);
             }
+
+            displayListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         public void ShowResults()
