@@ -23,7 +23,7 @@ namespace CMPT_291_Project
             InitializeComponent();
             this.accountNumber = acctNo;
 
-            String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental; Trusted_Connection = yes;";
+            String connectionString = "Server = DESKTOP-1JJOH8H; Database = MovieRental2; Trusted_Connection = yes;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
@@ -94,8 +94,8 @@ namespace CMPT_291_Project
             userPic.Visible = true;
             userActivity.Visible = true;
             userSettings.Visible = true;
-            MovieLists.Visible = true;
-            MovieLists.Visible = true;
+            MovieWatchList.Visible = true;
+            MovieWatchList.Visible = true;
             moviesSearch.Visible = true;
             //userMoviesDropdown.Visible = true;
 
@@ -109,23 +109,25 @@ namespace CMPT_291_Project
 
         private void moviesSearch_Click(object sender, EventArgs e)
         {
-            myCommand.CommandText = "select id, title, genre, copies_in_stock from movies, customers, customers_watchlist where customer_watchlist.id = customers.account_number and customer_watchlist.movie_id = movies.id";
+            int rowindex = MovieWatchList.CurrentCell.RowIndex;
+            int columnindex = MovieWatchList.CurrentCell.ColumnIndex;
+
+            String ID = MovieWatchList.Rows[rowindex].Cells[columnindex].Value.ToString();
+            int ID2 = Int32.Parse(ID);
+            myCommand.CommandText = "insert into orders (time_out, time_in, movie_id, customer_id, employee_ssn) VALUES(1, 1, " + ID2 + ", " + custAcctNo.Text + ",  1); DELETE FROM customer_watchlist WHERE movie_id = "+ID2+" and customer_id = "+custAcctNo.Text+";";
+
             try
             {
                 //MessageBox.Show(myCommand.CommandText);
                 myReader = myCommand.ExecuteReader();
 
-                MovieLists.Rows.Clear();
-                while (myReader.Read())
-                {
-                    MovieLists.Rows.Add(myReader["id"].ToString(), myReader["title"].ToString(), myReader["genre"].ToString(), myReader["copies_in_stock"].ToString());
-                }
+              
 
                 myReader.Close();
             }
-            catch
+            catch (Exception e3)
             {
-                //MessageBox.Show(e3.ToString(), "Error");
+                MessageBox.Show(e3.ToString(), "Error");
             }
             
         }
@@ -149,6 +151,92 @@ namespace CMPT_291_Project
             this.Hide();
             Rental settingsWindow = new Rental(this.accountNumber);
             settingsWindow.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(custAcctNo.Text);
+        
+            myCommand.CommandText =
+               "select distinct m.id, m.title, m.genre, m.copies_in_stock" +
+               " from movies as m, customers as c, customer_watchlist as w" + 
+               " where m.id = w.movie_id and w.customer_id = "+custAcctNo.Text+";";
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+
+                MovieWatchList.Rows.Clear();
+                while (myReader.Read())
+                {
+                    MovieWatchList.Rows.Add(myReader["id"].ToString(), myReader["title"].ToString(), myReader["genre"].ToString(), myReader["copies_in_stock"].ToString());
+                }
+                myReader.Close();
+
+            
+
+
+                myCommand.ExecuteNonQuery();
+            }
+            catch (Exception e2)
+            {
+
+
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+
+            myCommand.CommandText =
+               "select distinct m.id, m.title, m.genre, m.copies_in_stock" +
+                " from movies as m, orders as o" +
+                " where m.id = o.movie_id and o.customer_id = "+custAcctNo.Text+";";
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+
+                RentedMovies.Rows.Clear();
+                while (myReader.Read())
+                {
+                    RentedMovies.Rows.Add(myReader["id"].ToString(), myReader["title"].ToString(), myReader["genre"].ToString(), myReader["copies_in_stock"].ToString());
+                }
+                myReader.Close();
+
+
+
+
+                myCommand.ExecuteNonQuery();
+            }
+            catch (Exception e2)
+            {
+
+
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int rowindex = RentedMovies.CurrentCell.RowIndex;
+            int columnindex = RentedMovies.CurrentCell.ColumnIndex;
+
+            String ID = RentedMovies.Rows[rowindex].Cells[columnindex].Value.ToString();
+            int ID2 = Int32.Parse(ID);
+            myCommand.CommandText = "DELETE FROM orders WHERE movie_id = " + ID2 + " and customer_id = " + custAcctNo.Text + ";";
+
+            try
+            {
+                MessageBox.Show(myCommand.CommandText);
+                myReader = myCommand.ExecuteReader();
+
+
+
+                myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+            }
+
         }
     }
 }

@@ -28,7 +28,7 @@ namespace CMPT_291_Project
 
             TI = new CultureInfo("en-US", false).TextInfo;
 
-            String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental; Trusted_Connection = yes;";
+            String connectionString = "Server = DESKTOP-1JJOH8H; Database = MovieRental2; Trusted_Connection = yes;";
 
             conn = new SqlConnection(connectionString);
 

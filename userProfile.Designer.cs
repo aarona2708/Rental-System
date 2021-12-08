@@ -30,11 +30,11 @@ namespace CMPT_291_Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(userProfile));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.moviesSearch = new System.Windows.Forms.Button();
             this.custCred = new System.Windows.Forms.Label();
             this.custPhone = new System.Windows.Forms.Label();
@@ -82,25 +82,35 @@ namespace CMPT_291_Project
             this.changeLast = new System.Windows.Forms.TextBox();
             this.changeFirst = new System.Windows.Forms.TextBox();
             this.userSettings = new System.Windows.Forms.Button();
-            this.MovieLists = new System.Windows.Forms.DataGridView();
+            this.MovieWatchList = new System.Windows.Forms.DataGridView();
             this.gridMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridMovieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridMovieGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridMovieCopies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteUser = new System.Windows.Forms.Button();
             this.moviePageButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.RentedMovies = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Copies = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MovieLists)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MovieWatchList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RentedMovies)).BeginInit();
             this.SuspendLayout();
             // 
             // moviesSearch
             // 
             this.moviesSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moviesSearch.Location = new System.Drawing.Point(12, 486);
+            this.moviesSearch.Location = new System.Drawing.Point(243, 29);
             this.moviesSearch.Name = "moviesSearch";
             this.moviesSearch.Size = new System.Drawing.Size(98, 28);
             this.moviesSearch.TabIndex = 397;
-            this.moviesSearch.Text = "Show All";
+            this.moviesSearch.Text = "Rent";
             this.moviesSearch.UseVisualStyleBackColor = true;
             this.moviesSearch.Visible = false;
             this.moviesSearch.Click += new System.EventHandler(this.moviesSearch_Click);
@@ -594,34 +604,34 @@ namespace CMPT_291_Project
             this.userSettings.Visible = false;
             this.userSettings.Click += new System.EventHandler(this.userSettings_Click);
             // 
-            // MovieLists
+            // MovieWatchList
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MovieLists.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.MovieLists.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MovieLists.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MovieWatchList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.MovieWatchList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MovieWatchList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gridMovieID,
             this.gridMovieTitle,
             this.gridMovieGenre,
             this.gridMovieCopies});
-            this.MovieLists.Location = new System.Drawing.Point(12, 60);
-            this.MovieLists.Name = "MovieLists";
-            this.MovieLists.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.MovieLists.Size = new System.Drawing.Size(453, 420);
-            this.MovieLists.TabIndex = 395;
-            this.MovieLists.Visible = false;
+            this.MovieWatchList.Location = new System.Drawing.Point(12, 60);
+            this.MovieWatchList.Name = "MovieWatchList";
+            this.MovieWatchList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.MovieWatchList.Size = new System.Drawing.Size(453, 190);
+            this.MovieWatchList.TabIndex = 395;
+            this.MovieWatchList.Visible = false;
             // 
             // gridMovieID
             // 
             this.gridMovieID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gridMovieID.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridMovieID.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridMovieID.HeaderText = "ID";
             this.gridMovieID.Name = "gridMovieID";
             this.gridMovieID.Width = 69;
@@ -629,8 +639,8 @@ namespace CMPT_291_Project
             // gridMovieTitle
             // 
             this.gridMovieTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gridMovieTitle.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridMovieTitle.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridMovieTitle.HeaderText = "Title";
             this.gridMovieTitle.Name = "gridMovieTitle";
             this.gridMovieTitle.Width = 96;
@@ -638,8 +648,8 @@ namespace CMPT_291_Project
             // gridMovieGenre
             // 
             this.gridMovieGenre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gridMovieGenre.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridMovieGenre.DefaultCellStyle = dataGridViewCellStyle4;
             this.gridMovieGenre.HeaderText = "Genre";
             this.gridMovieGenre.Name = "gridMovieGenre";
             this.gridMovieGenre.Width = 119;
@@ -647,8 +657,8 @@ namespace CMPT_291_Project
             // gridMovieCopies
             // 
             this.gridMovieCopies.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gridMovieCopies.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridMovieCopies.DefaultCellStyle = dataGridViewCellStyle5;
             this.gridMovieCopies.HeaderText = "Copies";
             this.gridMovieCopies.Name = "gridMovieCopies";
             this.gridMovieCopies.Width = 130;
@@ -667,19 +677,99 @@ namespace CMPT_291_Project
             // moviePageButton
             // 
             this.moviePageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moviePageButton.Location = new System.Drawing.Point(310, 489);
+            this.moviePageButton.Location = new System.Drawing.Point(347, 29);
             this.moviePageButton.Name = "moviePageButton";
-            this.moviePageButton.Size = new System.Drawing.Size(155, 28);
+            this.moviePageButton.Size = new System.Drawing.Size(118, 28);
             this.moviePageButton.TabIndex = 398;
-            this.moviePageButton.Text = "Go to Movie Page";
+            this.moviePageButton.Text = "Search Movie";
             this.moviePageButton.UseVisualStyleBackColor = true;
             this.moviePageButton.Click += new System.EventHandler(this.moviePageButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 25);
+            this.label1.TabIndex = 399;
+            this.label1.Text = "Current Watchlist";
+            // 
+            // RentedMovies
+            // 
+            this.RentedMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RentedMovies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Title,
+            this.Genre,
+            this.Copies});
+            this.RentedMovies.Location = new System.Drawing.Point(12, 287);
+            this.RentedMovies.Name = "RentedMovies";
+            this.RentedMovies.Size = new System.Drawing.Size(453, 150);
+            this.RentedMovies.TabIndex = 400;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Title
+            // 
+            this.Title.HeaderText = "Title";
+            this.Title.Name = "Title";
+            // 
+            // Genre
+            // 
+            this.Genre.HeaderText = "Genre";
+            this.Genre.Name = "Genre";
+            // 
+            // Copies
+            // 
+            this.Copies.HeaderText = "Copies";
+            this.Copies.Name = "Copies";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.Location = new System.Drawing.Point(12, 259);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 25);
+            this.label2.TabIndex = 401;
+            this.label2.Text = "Currently Rented";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button1.Location = new System.Drawing.Point(12, 522);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 27);
+            this.button1.TabIndex = 402;
+            this.button1.Text = "Refresh Tables";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button2.Location = new System.Drawing.Point(347, 255);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 27);
+            this.button2.TabIndex = 403;
+            this.button2.Text = "Return";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // userProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 561);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.RentedMovies);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.moviePageButton);
             this.Controls.Add(this.moviesSearch);
             this.Controls.Add(this.custCred);
@@ -728,13 +818,14 @@ namespace CMPT_291_Project
             this.Controls.Add(this.changeLast);
             this.Controls.Add(this.changeFirst);
             this.Controls.Add(this.userSettings);
-            this.Controls.Add(this.MovieLists);
+            this.Controls.Add(this.MovieWatchList);
             this.Controls.Add(this.deleteUser);
             this.Name = "userProfile";
             this.Text = "userProfile";
             this.Load += new System.EventHandler(this.userProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MovieLists)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MovieWatchList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RentedMovies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -789,12 +880,21 @@ namespace CMPT_291_Project
         private System.Windows.Forms.TextBox changeLast;
         private System.Windows.Forms.TextBox changeFirst;
         private System.Windows.Forms.Button userSettings;
-        private System.Windows.Forms.DataGridView MovieLists;
+        private System.Windows.Forms.DataGridView MovieWatchList;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridMovieID;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridMovieTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridMovieGenre;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridMovieCopies;
         private System.Windows.Forms.Button deleteUser;
         private System.Windows.Forms.Button moviePageButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView RentedMovies;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Genre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Copies;
+        private System.Windows.Forms.Button button2;
     }
 }

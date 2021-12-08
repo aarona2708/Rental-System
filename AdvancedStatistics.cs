@@ -20,7 +20,7 @@ namespace CMPT_291_Project
         public AdvancedStatistics()
         {
             InitializeComponent();
-            String connectionString = "Server = IANPC; Database = MovieRental; Trusted_Connection = yes;";
+            String connectionString = "Server = DESKTOP-1JJOH8H; Database = MovieRental2; Trusted_Connection = yes;";
 
 
             /* Starting the connection */

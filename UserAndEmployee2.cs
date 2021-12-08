@@ -33,7 +33,7 @@ namespace CMPT_291_Project
             userDropdown.Items.Add("Show All");
             userDropdown.Items.Add("Show users with");
 
-            String connectionString = "Server = DESKTOP-1JJOH8H; Database = MovieRental; Trusted_Connection = yes;";
+            String connectionString = "Server = DESKTOP-1JJOH8H; Database = MovieRental2; Trusted_Connection = yes;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 

@@ -48,9 +48,9 @@ namespace CMPT_291_Project
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label1.Location = new System.Drawing.Point(33, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 25);
+            this.label1.Size = new System.Drawing.Size(299, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Select a movie to rent";
+            this.label1.Text = "Select a movie to add to watchlist";
             // 
             // movieGrid
             // 
@@ -87,7 +87,7 @@ namespace CMPT_291_Project
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(238, 42);
+            this.button2.Location = new System.Drawing.Point(552, 42);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 23);
             this.button2.TabIndex = 3;
@@ -101,7 +101,7 @@ namespace CMPT_291_Project
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 23);
             this.button3.TabIndex = 4;
-            this.button3.Text = "Rent selected movie";
+            this.button3.Text = "Add selected";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
