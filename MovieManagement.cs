@@ -23,7 +23,7 @@ namespace CMPT_291_Project
         public MovieManagement()
         {
             InitializeComponent();
-            string connectionString = "Server = IANPC; Database = MovieRental; Trusted_Connection = yes;";
+            string connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental2; Trusted_Connection = yes;";
 
             TI = new CultureInfo("en-US", false).TextInfo;
             conn = new SqlConnection(connectionString);

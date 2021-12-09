@@ -23,7 +23,7 @@ namespace CMPT_291_Project
             InitializeComponent();
             this.accountNumber = acctNo;
 
-            String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental; Trusted_Connection = yes;";
+            String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental2; Trusted_Connection = yes;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
@@ -94,8 +94,8 @@ namespace CMPT_291_Project
             userPic.Visible = true;
             userActivity.Visible = true;
             userSettings.Visible = true;
-            MovieLists.Visible = true;
-            MovieLists.Visible = true;
+            MovieWatchList.Visible = true;
+            MovieWatchList.Visible = true;
             moviesSearch.Visible = true;
             //userMoviesDropdown.Visible = true;
 
@@ -109,23 +109,54 @@ namespace CMPT_291_Project
 
         private void moviesSearch_Click(object sender, EventArgs e)
         {
-            myCommand.CommandText = "select id, title, genre, copies_in_stock from movies, customers, customers_watchlist where customer_watchlist.id = customers.account_number and customer_watchlist.movie_id = movies.id";
-            try
+            warningText.Visible = false;
+            int planInt = Int32.Parse(custPlan.Text);
+            Boolean flag = true;
+            if (planInt == 1 & RentedMovies.Rows.Count >= 2)
             {
-                //MessageBox.Show(myCommand.CommandText);
-                myReader = myCommand.ExecuteReader();
-
-                MovieLists.Rows.Clear();
-                while (myReader.Read())
-                {
-                    MovieLists.Rows.Add(myReader["id"].ToString(), myReader["title"].ToString(), myReader["genre"].ToString(), myReader["copies_in_stock"].ToString());
-                }
-
-                myReader.Close();
+                flag = false;
+                warningText.Visible = true;
             }
-            catch
+            if (planInt == 2 & RentedMovies.Rows.Count >= 2)
             {
-                //MessageBox.Show(e3.ToString(), "Error");
+                flag = false;
+                warningText.Visible = true;
+            }
+            if (planInt == 3 & RentedMovies.Rows.Count >= 3)
+            {
+                flag = false;
+                warningText.Visible = true;
+            }
+            if (planInt == 4 & RentedMovies.Rows.Count >= 4)
+            {
+                flag = false;
+                warningText.Visible = true;
+            }
+            if (!flag == false)
+            {
+                int rowindex = MovieWatchList.CurrentCell.RowIndex;
+                int columnindex = MovieWatchList.CurrentCell.ColumnIndex;
+
+                String ID = MovieWatchList.Rows[rowindex].Cells[columnindex].Value.ToString();
+                int ID2 = Int32.Parse(ID);
+                myCommand.CommandText = "insert into orders (movie_id, customer_id, employee_ssn) VALUES(" + ID2 + ", " 
+                    + custAcctNo.Text + ", '117-29-3880'); DELETE FROM customer_watchlist WHERE movie_id = " + ID2 + " and customer_id = " 
+                    + custAcctNo.Text + "; UPDATE movies SET copies_in_stock = copies_in_stock - 1 WHERE id = " + ID2 + ";";
+
+                try
+                {
+                    //MessageBox.Show(myCommand.CommandText);
+                    myReader = myCommand.ExecuteReader();
+
+
+
+                    myReader.Close();
+                    warningText.Visible = false;
+                }
+                catch
+                {
+                    //MessageBox.Show(e3.ToString(), "Error");
+                }
             }
             
         }
@@ -149,6 +180,98 @@ namespace CMPT_291_Project
             this.Hide();
             Rental settingsWindow = new Rental(this.accountNumber);
             settingsWindow.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            warningText.Visible = false;
+            Console.WriteLine(custAcctNo.Text);
+            Console.WriteLine(MovieWatchList.Rows.Count.ToString());
+        
+            myCommand.CommandText =
+               "select distinct m.id, m.title, m.genre, m.copies_in_stock" +
+               " from movies as m, customers as c, customer_watchlist as w" + 
+               " where m.id = w.movie_id and w.customer_id = "+custAcctNo.Text+";";
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+
+                MovieWatchList.Rows.Clear();
+                while (myReader.Read())
+                {
+                    MovieWatchList.Rows.Add(myReader["id"].ToString(), myReader["title"].ToString(), myReader["genre"].ToString(), myReader["copies_in_stock"].ToString());
+                }
+                myReader.Close();
+
+            
+
+
+                myCommand.ExecuteNonQuery();
+            }
+            catch (Exception e2)
+            {
+
+
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+
+            Console.WriteLine(MovieWatchList.Rows.Count.ToString());
+
+            myCommand.CommandText =
+               "select distinct m.id, m.title, m.genre, m.copies_in_stock" +
+                " from movies as m, orders as o" +
+                " where m.id = o.movie_id and o.customer_id = "+custAcctNo.Text+" and time_in is null;";
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+
+                RentedMovies.Rows.Clear();
+                while (myReader.Read())
+                {
+                    RentedMovies.Rows.Add(myReader["id"].ToString(), myReader["title"].ToString(), myReader["genre"].ToString(), myReader["copies_in_stock"].ToString());
+                }
+                myReader.Close();
+
+
+
+
+                myCommand.ExecuteNonQuery();
+            }
+            catch (Exception e2)
+            {
+
+
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            warningText.Visible = false;
+            int rowindex = RentedMovies.CurrentCell.RowIndex;
+            int columnindex = RentedMovies.CurrentCell.ColumnIndex;
+
+            String ID = RentedMovies.Rows[rowindex].Cells[columnindex].Value.ToString();
+            int ID2 = Int32.Parse(ID);
+            myCommand.CommandText = "UPDATE orders SET time_in = CURRENT_TIMESTAMP WHERE movie_id = " + ID2 + " and customer_id = " + custAcctNo.Text 
+                + " ; UPDATE movies SET copies_in_stock = copies_in_stock + 1 WHERE id = " + ID2 + ";";
+
+            try
+            {
+                
+                myReader = myCommand.ExecuteReader();
+
+
+
+                myReader.Close();
+            }
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+
         }
     }
 }

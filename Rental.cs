@@ -25,7 +25,7 @@ namespace CMPT_291_Project
         {
             InitializeComponent();
             this.userAccount = userAccountNo;
-            String connectionString = "Server = DESKTOP-1JJOH8H; Database = MovieRental; Trusted_Connection = yes;";
+            String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental2; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
@@ -80,7 +80,7 @@ namespace CMPT_291_Project
 
         private void Searcj_Click(object sender, EventArgs e)
         {
-            myCommand.CommandText = "select * from movies where name like '%" + textBox1.Text + "%'";
+            myCommand.CommandText = "select * from movies where title like '%" + textBox1.Text + "%'";
             try
             {
                 myReader = myCommand.ExecuteReader();
@@ -129,13 +129,20 @@ namespace CMPT_291_Project
             catch (Exception e2)
             {
 
-                MessageBox.Show(e2.ToString(), "Error");
+               
             }
 
 
 
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            userProfile profile = new userProfile(userAccount);
+            profile.Show();
         }
     }
 }
