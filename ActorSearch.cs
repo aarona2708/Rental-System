@@ -19,7 +19,7 @@ namespace CMPT_291_Project
 			InitializeComponent();
 			HideAll();
 
-			String connectionString = "Server = DESKTOP-1JJOH8H; Database = MovieRental2; Trusted_Connection = yes;";
+			String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental2; Trusted_Connection = yes;";
 
 
             /* Starting the connection */

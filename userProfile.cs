@@ -23,7 +23,7 @@ namespace CMPT_291_Project
             InitializeComponent();
             this.accountNumber = acctNo;
 
-            String connectionString = "Server = DESKTOP-1JJOH8H; Database = MovieRental2; Trusted_Connection = yes;";
+            String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental2; Trusted_Connection = yes;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
@@ -117,17 +117,17 @@ namespace CMPT_291_Project
                 flag = false;
                 warningText.Visible = true;
             }
-            if (planInt == 2 & RentedMovies.Rows.Count >= 3)
+            if (planInt == 2 & RentedMovies.Rows.Count >= 2)
             {
                 flag = false;
                 warningText.Visible = true;
             }
-            if (planInt == 3 & RentedMovies.Rows.Count >= 4)
+            if (planInt == 3 & RentedMovies.Rows.Count >= 3)
             {
                 flag = false;
                 warningText.Visible = true;
             }
-            if (planInt == 4 & RentedMovies.Rows.Count >= 5)
+            if (planInt == 4 & RentedMovies.Rows.Count >= 4)
             {
                 flag = false;
                 warningText.Visible = true;
@@ -139,7 +139,9 @@ namespace CMPT_291_Project
 
                 String ID = MovieWatchList.Rows[rowindex].Cells[columnindex].Value.ToString();
                 int ID2 = Int32.Parse(ID);
-                myCommand.CommandText = "insert into orders (time_out, time_in, movie_id, customer_id, employee_ssn) VALUES(1, 1, " + ID2 + ", " + custAcctNo.Text + ",  1); DELETE FROM customer_watchlist WHERE movie_id = " + ID2 + " and customer_id = " + custAcctNo.Text + "; UPDATE movies SET copies_in_stock = copies_in_stock - 1 WHERE id = " + ID2 + ";";
+                myCommand.CommandText = "insert into orders (movie_id, customer_id, employee_ssn) VALUES(" + ID2 + ", " 
+                    + custAcctNo.Text + ", '117-29-3880'); DELETE FROM customer_watchlist WHERE movie_id = " + ID2 + " and customer_id = " 
+                    + custAcctNo.Text + "; UPDATE movies SET copies_in_stock = copies_in_stock - 1 WHERE id = " + ID2 + ";";
 
                 try
                 {
@@ -151,9 +153,9 @@ namespace CMPT_291_Project
                     myReader.Close();
                     warningText.Visible = false;
                 }
-                catch (Exception e3)
+                catch
                 {
-                    MessageBox.Show(e3.ToString(), "Error");
+                    //MessageBox.Show(e3.ToString(), "Error");
                 }
             }
             
@@ -218,7 +220,7 @@ namespace CMPT_291_Project
             myCommand.CommandText =
                "select distinct m.id, m.title, m.genre, m.copies_in_stock" +
                 " from movies as m, orders as o" +
-                " where m.id = o.movie_id and o.customer_id = "+custAcctNo.Text+";";
+                " where m.id = o.movie_id and o.customer_id = "+custAcctNo.Text+" and time_in is null;";
             try
             {
                 myReader = myCommand.ExecuteReader();
@@ -253,7 +255,8 @@ namespace CMPT_291_Project
 
             String ID = RentedMovies.Rows[rowindex].Cells[columnindex].Value.ToString();
             int ID2 = Int32.Parse(ID);
-            myCommand.CommandText = "DELETE FROM orders WHERE movie_id = " + ID2 + " and customer_id = " + custAcctNo.Text + "; UPDATE movies SET copies_in_stock = copies_in_stock + 1 WHERE id = " + ID2 + ";";
+            myCommand.CommandText = "UPDATE orders SET time_in = CURRENT_TIMESTAMP WHERE movie_id = " + ID2 + " and customer_id = " + custAcctNo.Text 
+                + " ; UPDATE movies SET copies_in_stock = copies_in_stock + 1 WHERE id = " + ID2 + ";";
 
             try
             {
@@ -264,9 +267,9 @@ namespace CMPT_291_Project
 
                 myReader.Close();
             }
-            catch (Exception e3)
+            catch (Exception e2)
             {
-               
+                MessageBox.Show(e2.ToString(), "Error");
             }
 
         }

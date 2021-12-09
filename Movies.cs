@@ -30,7 +30,7 @@ namespace CMPT_291_Project
             userMoviesDropdown.Items.Add("My Watchlist");
             userMoviesDropdown.Items.Add("My Suggestions");
 
-            String connectionString = "Server = DESKTOP-1JJOH8H; Database = MovieRental2; Trusted_Connection = yes;";
+            String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental2; Trusted_Connection = yes;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
