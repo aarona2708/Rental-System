@@ -39,6 +39,7 @@ namespace CMPT_291_Project
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Searcj = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.movieGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,19 +115,31 @@ namespace CMPT_291_Project
             // 
             // Searcj
             // 
+            this.Searcj.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.Searcj.Location = new System.Drawing.Point(238, 414);
             this.Searcj.Name = "Searcj";
-            this.Searcj.Size = new System.Drawing.Size(75, 26);
+            this.Searcj.Size = new System.Drawing.Size(75, 20);
             this.Searcj.TabIndex = 6;
             this.Searcj.Text = "Search";
             this.Searcj.UseVisualStyleBackColor = true;
             this.Searcj.Click += new System.EventHandler(this.Searcj_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(890, 526);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Rental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 561);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Searcj);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
@@ -154,5 +167,6 @@ namespace CMPT_291_Project
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Searcj;
+        private System.Windows.Forms.Button button1;
     }
 }

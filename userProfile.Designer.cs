@@ -98,6 +98,7 @@ namespace CMPT_291_Project
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.warningText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MovieWatchList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RentedMovies)).BeginInit();
@@ -760,11 +761,24 @@ namespace CMPT_291_Project
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // warningText
+            // 
+            this.warningText.AutoSize = true;
+            this.warningText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.warningText.ForeColor = System.Drawing.Color.Red;
+            this.warningText.Location = new System.Drawing.Point(12, 444);
+            this.warningText.Name = "warningText";
+            this.warningText.Size = new System.Drawing.Size(442, 20);
+            this.warningText.TabIndex = 404;
+            this.warningText.Text = "ERROR: Renting this movie will exceed your permitted rentals";
+            this.warningText.Visible = false;
+            // 
             // userProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 561);
+            this.Controls.Add(this.warningText);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -896,5 +910,6 @@ namespace CMPT_291_Project
         private System.Windows.Forms.DataGridViewTextBoxColumn Genre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Copies;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label warningText;
     }
 }

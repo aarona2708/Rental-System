@@ -109,25 +109,52 @@ namespace CMPT_291_Project
 
         private void moviesSearch_Click(object sender, EventArgs e)
         {
-            int rowindex = MovieWatchList.CurrentCell.RowIndex;
-            int columnindex = MovieWatchList.CurrentCell.ColumnIndex;
-
-            String ID = MovieWatchList.Rows[rowindex].Cells[columnindex].Value.ToString();
-            int ID2 = Int32.Parse(ID);
-            myCommand.CommandText = "insert into orders (time_out, time_in, movie_id, customer_id, employee_ssn) VALUES(1, 1, " + ID2 + ", " + custAcctNo.Text + ",  1); DELETE FROM customer_watchlist WHERE movie_id = "+ID2+" and customer_id = "+custAcctNo.Text+";";
-
-            try
+            warningText.Visible = false;
+            int planInt = Int32.Parse(custPlan.Text);
+            Boolean flag = true;
+            if (planInt == 1 & RentedMovies.Rows.Count >= 2)
             {
-                //MessageBox.Show(myCommand.CommandText);
-                myReader = myCommand.ExecuteReader();
-
-              
-
-                myReader.Close();
+                flag = false;
+                warningText.Visible = true;
             }
-            catch (Exception e3)
+            if (planInt == 2 & RentedMovies.Rows.Count >= 3)
             {
-                MessageBox.Show(e3.ToString(), "Error");
+                flag = false;
+                warningText.Visible = true;
+            }
+            if (planInt == 3 & RentedMovies.Rows.Count >= 4)
+            {
+                flag = false;
+                warningText.Visible = true;
+            }
+            if (planInt == 4 & RentedMovies.Rows.Count >= 5)
+            {
+                flag = false;
+                warningText.Visible = true;
+            }
+            if (!flag == false)
+            {
+                int rowindex = MovieWatchList.CurrentCell.RowIndex;
+                int columnindex = MovieWatchList.CurrentCell.ColumnIndex;
+
+                String ID = MovieWatchList.Rows[rowindex].Cells[columnindex].Value.ToString();
+                int ID2 = Int32.Parse(ID);
+                myCommand.CommandText = "insert into orders (time_out, time_in, movie_id, customer_id, employee_ssn) VALUES(1, 1, " + ID2 + ", " + custAcctNo.Text + ",  1); DELETE FROM customer_watchlist WHERE movie_id = " + ID2 + " and customer_id = " + custAcctNo.Text + "; UPDATE movies SET copies_in_stock = copies_in_stock - 1 WHERE id = " + ID2 + ";";
+
+                try
+                {
+                    //MessageBox.Show(myCommand.CommandText);
+                    myReader = myCommand.ExecuteReader();
+
+
+
+                    myReader.Close();
+                    warningText.Visible = false;
+                }
+                catch (Exception e3)
+                {
+                    MessageBox.Show(e3.ToString(), "Error");
+                }
             }
             
         }
@@ -155,7 +182,9 @@ namespace CMPT_291_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
+            warningText.Visible = false;
             Console.WriteLine(custAcctNo.Text);
+            Console.WriteLine(MovieWatchList.Rows.Count.ToString());
         
             myCommand.CommandText =
                "select distinct m.id, m.title, m.genre, m.copies_in_stock" +
@@ -183,6 +212,8 @@ namespace CMPT_291_Project
 
                 MessageBox.Show(e2.ToString(), "Error");
             }
+
+            Console.WriteLine(MovieWatchList.Rows.Count.ToString());
 
             myCommand.CommandText =
                "select distinct m.id, m.title, m.genre, m.copies_in_stock" +
@@ -216,16 +247,17 @@ namespace CMPT_291_Project
 
         private void button2_Click(object sender, EventArgs e)
         {
+            warningText.Visible = false;
             int rowindex = RentedMovies.CurrentCell.RowIndex;
             int columnindex = RentedMovies.CurrentCell.ColumnIndex;
 
             String ID = RentedMovies.Rows[rowindex].Cells[columnindex].Value.ToString();
             int ID2 = Int32.Parse(ID);
-            myCommand.CommandText = "DELETE FROM orders WHERE movie_id = " + ID2 + " and customer_id = " + custAcctNo.Text + ";";
+            myCommand.CommandText = "DELETE FROM orders WHERE movie_id = " + ID2 + " and customer_id = " + custAcctNo.Text + "; UPDATE movies SET copies_in_stock = copies_in_stock + 1 WHERE id = " + ID2 + ";";
 
             try
             {
-                MessageBox.Show(myCommand.CommandText);
+                
                 myReader = myCommand.ExecuteReader();
 
 
@@ -234,7 +266,7 @@ namespace CMPT_291_Project
             }
             catch (Exception e3)
             {
-                MessageBox.Show(e3.ToString(), "Error");
+               
             }
 
         }
