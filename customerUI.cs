@@ -23,7 +23,7 @@ namespace CMPT_291_Project
             String connectionString = "Server = PLEASEDONTHACKM; Database = MovieRental2; Trusted_Connection = yes;";
 
 
-            customerDropdown.Items.Add("Show All");
+            //customerDropdown.Items.Add("Show All");
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
@@ -170,30 +170,26 @@ namespace CMPT_291_Project
         private void custSearchButton_Click_1(object sender, EventArgs e)
         {
             myCommand.CommandText = "select * from customers";
-            if (customerDropdown.Text == "Show All")
+
+            try
             {
-                try
-                {
-                    //MessageBox.Show(myCommand.CommandText);
-                    myReader = myCommand.ExecuteReader();
+                //MessageBox.Show(myCommand.CommandText);
+                myReader = myCommand.ExecuteReader();
 
-                    Users.Rows.Clear();
-                    while (myReader.Read())
-                    {
-                        Users.Rows.Add(myReader["account_number"].ToString(), myReader["first_name"].ToString(), myReader["last_name"].ToString(), myReader["phone_no"].ToString(), myReader["account_type"].ToString());
-                    }
-
-                    myReader.Close();
-                }
-                catch
+                Users.Rows.Clear();
+                while (myReader.Read())
                 {
-                    //MessageBox.Show(e3.ToString(), "Error");
+                    Users.Rows.Add(myReader["account_number"].ToString(), myReader["first_name"].ToString(), myReader["last_name"].ToString(), myReader["phone_no"].ToString(), myReader["account_type"].ToString());
                 }
+
+                myReader.Close();
             }
+            catch
+            {
+                //MessageBox.Show(e3.ToString(), "Error");
+            }
+            
 
-
-            if (customerDropdown.Text == "Show users with")
-                myCommand.CommandText += " where ssn like %" + customerSearchBox.Text + "%";
         }
 
         private void changeUserType_Click_1(object sender, EventArgs e)

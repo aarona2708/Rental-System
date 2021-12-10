@@ -153,9 +153,9 @@ namespace CMPT_291_Project
                     myReader.Close();
                     warningText.Visible = false;
                 }
-                catch
+                catch (Exception e3)
                 {
-                    //MessageBox.Show(e3.ToString(), "Error");
+                    MessageBox.Show(e3.ToString(), "Error");
                 }
             }
             

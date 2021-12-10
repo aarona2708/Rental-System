@@ -25,6 +25,9 @@ namespace CMPT_291_Project
         public UserAndEmployee2()
         {
             InitializeComponent();
+
+            TI = new CultureInfo("en-US", false).TextInfo;
+
             dropDown.Items.Clear();
             dropDown.Items.Add("Show All");
             dropDown.Items.Add("Show employees with SSN");
@@ -795,7 +798,7 @@ namespace CMPT_291_Project
             if (selectedRow.Cells[0].Value != null)
             {
                 empSSN.Text = selectedRow.Cells[0].Value.ToString();
-                myCommand.CommandText = "select * from employees where ssn = " + empSSN.Text;
+                myCommand.CommandText = "select * from employees where ssn = " + "'" + empSSN.Text + "'";
 
                 try
                 {
@@ -1313,6 +1316,7 @@ namespace CMPT_291_Project
             {
                 try
                 {
+                    myCommand.Parameters.Clear();
                     myCommand.Parameters.Add(new SqlParameter("@title", TI.ToTitleCase(addMoviePopup.GetMovieTitle())));
                     myCommand.Parameters.Add(new SqlParameter("@genre", addMoviePopup.GetMovieGenre()));
                     myCommand.Parameters.Add(new SqlParameter("@copies", addMoviePopup.GetMovieCopies()));
@@ -1348,7 +1352,7 @@ namespace CMPT_291_Project
                 myCommand.Parameters.Clear();
 
                 LoadMovieData();
-                MessageBox.Show("Deleted movie with ID " + itemId + " (" + title + ") from the database.");
+                //MessageBox.Show("Deleted movie with ID " + itemId + " (" + title + ") from the database.");
             }
             catch (Exception ex)
             {
@@ -1393,7 +1397,7 @@ namespace CMPT_291_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "ERROR");
+                //MessageBox.Show(ex.ToString(), "ERROR");
             }
         }
 
@@ -1421,6 +1425,13 @@ namespace CMPT_291_Project
             {
                 MessageBox.Show(ex.ToString(), "ERROR");
             }
+        }
+
+        private void changeUserTypeEmp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainScreen homeWindow = new MainScreen();
+            homeWindow.Show();
         }
     }
 
