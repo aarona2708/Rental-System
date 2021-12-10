@@ -76,29 +76,11 @@
     <Compile Include="AdvancedStatistics.Designer.cs">
       <DependentUpon>AdvancedStatistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="MovieManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MovieManagement.Designer.cs">
-      <DependentUpon>MovieManagement.cs</DependentUpon>
-    </Compile>
     <Compile Include="Movies.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Movies.Designer.cs">
       <DependentUpon>Movies.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MovieUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MovieUI.designer.cs">
-      <DependentUpon>MovieUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MovieUI2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MovieUI2.designer.cs">
-      <DependentUpon>MovieUI2.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,17 +123,8 @@
     <EmbeddedResource Include="AdvancedStatistics.resx">
       <DependentUpon>AdvancedStatistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MovieManagement.resx">
-      <DependentUpon>MovieManagement.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Movies.resx">
       <DependentUpon>Movies.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MovieUI.resx">
-      <DependentUpon>MovieUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MovieUI2.resx">
-      <DependentUpon>MovieUI2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
