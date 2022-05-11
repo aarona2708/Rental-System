@@ -1,1 +1,1 @@
-# Rental-System
+Rental system
